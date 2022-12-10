@@ -9,18 +9,31 @@ vim.g.localleader = "\\"
 
 
 -- IMPORTS
- require('vars')    -- Variables
- require('opts')    -- Options
- require('keys')    -- Keymaps
- require('plug')    -- Plugins
- require('impatient')
+require('rajivkumarkale.vars')    -- Variables
+require('rajivkumarkale.opts')    -- Options
+require('rajivkumarkale.keys')    -- Keymaps
+require('rajivkumarkale.plugs')    -- Plugins
+ 
+
+_G.__luacache_config = {
+  chunks = {
+    enable = true,
+    path = vim.fn.stdpath('cache')..'/luacache_chunks',
+  },
+  modpaths = {
+    enable = true,
+    path = vim.fn.stdpath('cache')..'/luacache_modpaths',
+  }
+}
+require('impatient')
 
 -- PLUGINS:
 require('nvim-tree').setup{}
 
 require('lualine').setup {
     options = {
-        theme = 'dracula-nvim'
+        --theme = 'dracula-nvim'
+        theme = 'gruvbox'
     }
 }
 
